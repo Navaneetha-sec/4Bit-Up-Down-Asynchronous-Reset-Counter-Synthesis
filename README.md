@@ -1,4 +1,4 @@
-# 4Bit-Up-Down-Asynchronous-Reset-Counter-Synthesis
+# Exp-4: 4Bit-Up-Down-Asynchronous-Reset-Counter-Synthesis
 
 ## Aim:
 
@@ -50,32 +50,36 @@ v, vi → Sets the maximum limit for I/O port delay to 1ps.
 
 The Liberty files are present in the library path,
 
-• The Available technology nodes are 180nm ,90nm and 45nm.
+* The Available technology nodes are 180nm ,90nm and 45nm.
 
-• In the terminal, initialise the tools with the following commands if a new terminal is being
+* In the terminal, initialise the tools with the following commands if a new terminal is being
 used.
 
 ◦ csh
 
 ◦ source /cadence/install/cshrc
 
-• The tool used for Synthesis is “Genus”. Hence, type “genus -gui” to open the tool.
+* The tool used for Synthesis is “Genus”. Hence, type “genus -gui” to open the tool.
 
-• Genus Script file with .tcl file Extension commands are executed one by one to synthesize the netlist.
+* Genus Script file with .tcl file Extension commands are executed one by one to synthesize the netlist.
 
 #### Synthesis RTL Schematic :
 
+![Screenshot (56)](https://github.com/user-attachments/assets/02af448d-d479-4321-8951-09539705053f)
+
 #### Area report:
+
+![Screenshot (57)](https://github.com/user-attachments/assets/bb776bfe-86f7-4db2-bc1e-846916a07e7d)
 
 #### Power Report:
 
+![Screenshot (58)](https://github.com/user-attachments/assets/a5f60433-1fee-46ae-9448-e9fa5caa044c)
+
 #### Timing Report: 
+
+![Screenshot (59)](https://github.com/user-attachments/assets/1d286d5c-e643-4ee3-b958-813f7cfaa322)
 
 #### Result: 
 
 The generic netlist has been created, and area, power, and timing reports have been tabulated and generated using Genus.
-
-
-
-
 
