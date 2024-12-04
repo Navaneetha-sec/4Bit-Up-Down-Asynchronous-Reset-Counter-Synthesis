@@ -46,6 +46,52 @@ iv → Sets Clock Uncertainty to 10ps.
 
 v, vi → Sets the maximum limit for I/O port delay to 1ps.
 
+
+## counter_test
+
+`timescale 1ns / 1ns
+
+module counter_test;
+
+reg clk,rst,m;
+
+wire [3:0] count;
+
+initial
+
+begin
+
+clk=0;
+
+rst=0;#5;
+
+rst=1;
+
+end
+
+initial
+
+begin
+
+m=1;
+
+#160 m=0;
+
+end
+
+counter counter1 (clk,m,rst, count);
+
+always #5 clk=~clk;
+ 
+initial $monitor("Time=%t rst=%b clk=%b count=%b" , $time,rst,clk,count);
+
+initial
+
+#320 $finish;
+
+endmodule
+
+
 ### Step 3 : Performing Synthesis
 
 The Liberty files are present in the library path,
@@ -63,13 +109,59 @@ used.
 
 • Genus Script file with .tcl file Extension commands are executed one by one to synthesize the netlist.
 
+
+## counter
+
+`timescale 1ns / 1 ns
+
+module counter(clk,m,rst,count);
+
+input clk,m,rst;
+
+output reg [3:0] count;
+
+always@(posedge clk or negedge rst)
+
+begin
+
+if (!rst)
+
+count=0;
+
+else if(m)
+
+count=count+1;
+
+else
+
+count=count-1;
+
+end
+
+endmodule
+
+
 #### Synthesis RTL Schematic :
+![WhatsApp Image 2024-11-22 at 21 03 05_99d6fcbe](https://github.com/user-attachments/assets/63563b00-473e-4438-978b-22720bc871ff)
+
+
 
 #### Area report:
+![WhatsApp Image 2024-11-22 at 21 04 06_a9eced04](https://github.com/user-attachments/assets/c61068a9-2ef8-4b1e-9853-61d9dde01415)
+
+
+
 
 #### Power Report:
+![WhatsApp Image 2024-11-22 at 21 04 35_41b8befa](https://github.com/user-attachments/assets/aefcbe72-7baf-4043-9496-46c666644076)
+
+
+
 
 #### Timing Report: 
+![WhatsApp Image 2024-11-22 at 21 05 18_0cdc1201](https://github.com/user-attachments/assets/30540fc5-544c-43e9-9b9f-8ce66a11454c)
+
+
 
 #### Result: 
 
