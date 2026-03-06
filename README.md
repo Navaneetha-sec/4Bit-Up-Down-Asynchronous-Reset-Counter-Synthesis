@@ -1,4 +1,4 @@
-# EXP2-4Bit-Up-Down-Asynchronous-Reset-Counter-Synthesis
+# 4Bit-Up-Down-Asynchronous-Reset-Counter-Synthesis
 
 ## Aim:
 
